@@ -8,8 +8,18 @@ class ContactController {
     response.json(contacts);
   }
 
-  show() {
+  async show(request, response) {
     // Obter UM registro
+    const { id } = request.params;
+
+    const contact = await ContactsRepository.findById(id);
+
+    if (!contact) {
+      // 404 Not Found
+      return response.status(404).json({ error: 'User not found' });
+    }
+
+    return response.json(contact);
   }
 
   store() {
