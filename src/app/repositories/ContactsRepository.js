@@ -8,6 +8,13 @@ let contacts = [
     phone: '123456789',
     category_id: v4(),
   },
+  {
+    id: v4(),
+    name: 'Mateus',
+    email: 'mateus@mail.com',
+    phone: '987654321',
+    category_id: v4(),
+  },
 ];
 
 class ContactsRepository {
